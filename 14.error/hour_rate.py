@@ -10,3 +10,6 @@ try:
     print(pay)
 except:
     print("not a number")
+
+finally:
+    print("end of process")
