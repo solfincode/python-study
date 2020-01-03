@@ -6,4 +6,5 @@ def divide(dividend,divisor):
 def calculate(*values,operator):
     return operator(*values)
 result = calculate(20,4,operator=divide)
+
 print(result)
