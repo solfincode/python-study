@@ -1,11 +1,7 @@
 user = {"username": "jose", "access_level": "guest"}
 
 
-def get_admin_password():
-    return "1234"
-
-
-def make_function(func):
+def make_secure(func):
     def secure_function():
         if user["access_level"] == "admin":
             return func()
@@ -14,5 +10,9 @@ def make_function(func):
     return secure_function
 
 
-get_admin_password = make_function(get_admin_password)
+@make_secure
+def get_admin_password():
+    return "1234"
+
+
 print(get_admin_password())
